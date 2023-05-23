@@ -5,7 +5,7 @@
         {{ formattedTime }}
       </div>
     </div>
-
+    <div class="separator"></div>
     <div class="set-section">
       <h2>SET DONE</h2>
       <div class="set-container">
@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-
+    <div class="separator"></div>
     <div class="action-section">
       <button @click="toggleTimer">
         <span class="material-symbols-rounded"> play_pause </span>
@@ -27,9 +27,7 @@
         <span class="material-symbols-rounded"> device_reset </span>
       </button>
       <button @click="cheer">
-        <span class="material-symbols-rounded">
-          <img src="../assets/logo.png" alt="cheer" width="25" height="25" />
-        </span>
+        <img src="../assets/logo.png" alt="cheer" width="25" height="25" />
       </button>
     </div>
   </div>
@@ -113,27 +111,34 @@ export default {
 </script>
 
 <style>
+.separator {
+  border-bottom: 1px solid var(--secondary-color);
+  width: 100%;
+  margin: 2em 0;
+}
+
 .round-corner {
   border-radius: 100%;
   background-color: transparent;
   color: var(--secondary-color);
-  padding: 1em;
+  padding: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
   display: flex;
   align-items: center;
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--primary-color);
   /* make same height that width */
   width: 10em;
   height: 10em;
+  margin-bottom: 3em;
 }
 
 .set-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4em 1em 1em;
+  margin: 2.7em 1em 1em;
   /* align content vertically */
   flex-direction: column;
   padding: 0;
@@ -150,7 +155,7 @@ export default {
 
 .set-section h2 {
   margin: 0;
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: var(--primary-color);
   display: block;
   width: 100%;
@@ -160,7 +165,7 @@ export default {
 }
 
 .timer {
-  font-size: 3em;
+  font-size: 4em;
   color: var(--text-color);
 }
 
@@ -190,7 +195,7 @@ export default {
   cursor: pointer;
   color: var(--primary-color);
   padding: 0.15em;
-  font-size: 2em;
+  font-size: 1.5em !important;
   vertical-align: top;
 }
 
@@ -211,10 +216,25 @@ button {
   align-items: center;
   cursor: pointer;
   color: var(--primary-color);
-  padding: 0.2em;
-  font-size: 1.6em;
+  padding: 0.3em;
+  font-size: 2em;
   margin: 0.3em;
   vertical-align: top;
+}
+
+button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em !important;
+}
+
+button img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2em;
+  height: 1.2em;
 }
 
 .action-section {
