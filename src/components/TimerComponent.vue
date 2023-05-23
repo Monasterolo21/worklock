@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="round-corner">
-      <div class="timer">
-        {{ timer }}
+      <div class="timer" :class="{ paused: !timerActive }">
+        {{ formattedTime }}
       </div>
     </div>
 
@@ -20,14 +20,16 @@
     </div>
 
     <div class="action-section">
-      <button @click="startTimer" :disabled="disableTimerButton">
+      <button @click="toggleTimer">
         <span class="material-symbols-rounded"> play_pause </span>
       </button>
-      <button @click="reset" :disabled="disableResetButton">
+      <button @click="reset">
         <span class="material-symbols-rounded"> device_reset </span>
       </button>
       <button @click="cheer">
-        <span class="material-symbols-rounded"> fitness_center </span>
+        <span class="material-symbols-rounded">
+          <img src="../assets/logo.png" alt="cheer" width="25" height="25" />
+        </span>
       </button>
     </div>
   </div>
@@ -38,12 +40,20 @@ export default {
   data() {
     return {
       counter: 0,
-      disableResetButton: true,
-      disableTimerButton: true,
       timer: 0,
       timerActive: false,
       intervalId: null,
     };
+  },
+  computed: {
+    formattedTime() {
+      const minutes = Math.floor(this.timer / 60);
+      const remainingSeconds = this.timer % 60;
+      const minutesDisplay = minutes < 10 ? "0" + minutes : minutes;
+      const secondsDisplay =
+        remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
+      return `${minutesDisplay}:${secondsDisplay}`;
+    },
   },
   methods: {
     incrementCounter() {
@@ -65,14 +75,15 @@ export default {
       this.toggleTimer();
     },
     reset() {
-      if (this.timerActive) {
-        this.timerActive = false;
-        clearInterval(this.intervalId);
-        this.timer = 0;
-      }
+      this.timerActive = false;
+      clearInterval(this.intervalId);
+      this.timer = 0;
     },
     cheer() {
-      alert("Dai uomo!");
+      // alert("Dai uomo!");
+      // reproduce sound
+      const audio = new Audio(require("../assets/audio/vaiUomo.mp3"));
+      audio.play();
     },
 
     toggleTimer() {
@@ -151,6 +162,10 @@ export default {
 .timer {
   font-size: 3em;
   color: var(--text-color);
+}
+
+.paused {
+  opacity: 0.5;
 }
 
 .counter {
