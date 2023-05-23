@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons+Outlined');
+
+:root {
+  --background: #1D1E26;
+  --text-color: #9580FF;
+	--primary-color: #FF80BF;
+	--secondary-color: #E39A94;
+	--red-ice: #FFEFEF;
+  --red-ice-low-opacity: rgba(255, 240, 240, 0.3);
+	--white: #ffffff;
+  --telegram: #D9E7F9;
+	--header-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 24%, rgba(0, 0, 0, 0.9) 90%);
+	--grey: #B7B7B7;
+	--light-grey: #f3f3f3;
+	--product-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.774) 20%, rgba(0, 0, 0, 0.8) 90%);
+	--search-background: linear-gradient(223.84deg, rgba(36, 38, 39, 0.9) 3.6%, rgba(0, 0, 0, 0.9) 45.84%);
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--secondary-color);
+  opacity: 0.7; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--secondary-color);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--secondary-color);
+}
+
+#app {
+	height: 100%;
+}
+
+html {
+	background: var(--background);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+@keyframes my-simple-fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	letter-spacing: -0.3px;
+	color: var(--text-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-ms-overflow-style: none;
+	/* animation: my-simple-fade .8s; */
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */ 
+  body{
+    bottom: 10%;
+  }
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+	color: var(--white);
+	text-decoration: none;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 3em;
+	display: inline-block;
+	padding: 0;
+	margin: 0.2em 0;
+  color: var(--primary-color);
+}
+
+h2 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.4em;
+	padding: 0.1em 0;
+}
+
+h3 {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1.3em;
+	padding: 0;
+	margin: 0;
+}
+
+h4 {
+	font-style: normal;
+	font-weight: 200;
+	font-size: 0.9em;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	padding: 0;
+	font-size: 1em;
+  font-weight: 300;
+}
+
+.panel{
+  padding-left: 20%;
+  width: 80%;
+  height: 100%;
+	overflow-x: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+  .panel{
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+.content-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
