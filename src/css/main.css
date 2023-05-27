@@ -62,7 +62,8 @@ body {
 	max-width: 100%;
 	overflow-x: hidden;
 	margin: 0;
-	font-family: 'Encode Sans', sans-serif;
+	font-family: 'Inconsolata', monospace;
+	font-family: 'Nova Mono', monospace;
 	font-style: normal;
 	font-weight: normal;
 	text-align: center;
@@ -101,8 +102,8 @@ h1 {
 
 h2 {
 	font-style: normal;
-	font-weight: 600;
-	font-size: 1.4em;
+	font-weight: 800;
+	font-size: 1.6em;
 	padding: 0.1em 0;
 }
 
@@ -149,4 +150,9 @@ p {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.subtitle {
+	font-size: 2.4em!important;
+	font-weight: 700!important;
 }

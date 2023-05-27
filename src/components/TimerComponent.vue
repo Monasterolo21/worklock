@@ -7,7 +7,7 @@
     </div>
     <div class="separator"></div>
     <div class="set-section">
-      <h2>SET DONE</h2>
+      <h2 class="subtitle">SET DONE</h2>
       <div class="set-container">
         <button class="action-button" @click="decrementCounter">
           <span class="material-symbols-rounded"> remove </span>
@@ -125,7 +125,7 @@ export default {
   border-radius: 100%;
   background-color: transparent;
   color: var(--secondary-color);
-  padding: 3em;
+  padding: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,8 +133,9 @@ export default {
   align-items: center;
   border: 2px solid var(--primary-color);
   /* make same height that width */
-  width: 10em;
-  height: 10em;
+  width: 12em;
+  height: 12em;
+  margin: 0 auto;
   margin-bottom: 3em;
 }
 
@@ -169,7 +170,7 @@ export default {
 }
 
 .timer {
-  font-size: 4em;
+  font-size: 4.5em;
   color: var(--text-color);
 }
 
