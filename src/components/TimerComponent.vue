@@ -27,7 +27,7 @@
         <span class="material-symbols-rounded"> device_reset </span>
       </button>
       <button @click="cheer">
-        <img src="../assets/logo.png" alt="cheer" width="25" height="25" />
+        <img src="@/assets/img/logo.png" alt="cheer" width="25" height="25" />
       </button>
     </div>
   </div>
