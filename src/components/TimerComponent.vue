@@ -39,6 +39,7 @@ export default {
     return {
       counter: 0,
       timer: 0,
+      startTime: null,
       timerActive: false,
       intervalId: null,
     };
@@ -94,8 +95,11 @@ export default {
     startTimer() {
       if (!this.timerActive) {
         this.timerActive = true;
+        this.startTime = new Date().getTime();
         this.intervalId = setInterval(() => {
-          this.timer++;
+          this.timer = Math.floor(
+            (new Date().getTime() - this.startTime) / 1000
+          );
         }, 1000);
       }
     },
